@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,700|Nunito:300,400,400i,700,900|Open+Sans:300,400,400i,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+a {
+    color: #585858;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1 {
+    font-size: 1.5em;
+    margin: .5em 0 0;
+}
+
+h3 {
+    color: #000;
+    font-size: .875em;
+    margin-bottom: .5em;
+    background: white;
+}
+
+header#pgHeader {
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+
+
+section {
+    padding: .5em 2em;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    grid-template-areas: 
+        "h"
+        "i"
+        "l";   
+}
+
+.item header {
+    grid-area: h;
+}
+
+.item img {
+    grid-area: i;
+}
+
+.item ul {
+    grid-area: l;
+    list-style: none;
+}
+
+.item li {
+    padding: 0 0 .25em;
+}
+
+.itemAmt {
+    display: flex;
+    align-items: center;
+}
+
+#amt {
+    color: #6f6f6f;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0;
+    width: 40px;
+    text-align: center;
+    border: none;
+    -moz-appearance: textfield; /* FF fix, removes default up/down arrows*/
+}
+/* remove arrows/spinners from input #amt*/
+#amt::-webkit-outer-spin-button,
+#amt::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.item button {
+    font-size: 1.35em;
+    color: #6F6F6F;
+    cursor: pointer;
+    border: 0;
+}
+
+.item button:focus {
+    outline: solid 1px #fff;
+}
+
+.order ul {
+    list-style: none;
+    border: solid 1px #cecece;
+    border-radius: 4px;
+    padding: .75em;
+}
+
+.order li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: dotted 1px #cecece;
+}
+
+.order li:last-child {
+    border-top: solid 1px #aaa;
+    border-bottom: none;
+    font-weight: 700;
+    padding-top: .5em;
+}
+
+#orderSum header {
+    text-align: left;
+}
+
+#orderSum {
+    text-align: center;
+    max-width: 400px;
+    margin-bottom: 1.5em;        
+}
+
+.formBtn {
+    background-color: #2F2F2F;
+    border-radius: 4px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1em;
+    padding: .75em;
+    margin: 1em auto;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.note {
+    font-size: .75em;
+}
+.price {
+    font-weight: 700;
+}
+
+.sep {
+    border-top: solid 1px #C7C7C7;
+    border-bottom: solid 1px #C7C7C7;
+    padding: .25em 0;
+}
+
+@media screen and (min-width: 400px) {
+    .item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto;
+        grid-gap: 10px;
+        grid-template-areas: 
+            "h h"
+            "i l";   
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #cart main {
+        grid-template-areas:
+            "ph ph"
+            "c c"
+            "f f";
+        grid-auto-rows: 10% auto 15%;
+    }
+    
+    header#pgHeader {
+        margin-bottom: 0;
+    }
+    
+    .contentWrapper { 
+        grid-area: c;
+        display: grid;
+        grid-template-areas: 
+            "sh sh"
+            "sb os";
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 2em auto;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    header.sectionHeader {
+        grid-area: sh;
+        max-width: 900px;
+        padding: 0 0 0 2em
+    }
+    
+    #cart footer { grid-area: f;}
+    button.checkout {margin-top: 1em;}
+    
+    section.main {grid-area: sb;}
+    section#orderSum {
+        grid-area: os;
+        margin: 4px 0 0;
+        background-color: #F8F8F8;
+    }
+    
+    .order ul { border: none;}
+}
+
