@@ -6,6 +6,4 @@
  
  Shop Layouts Grid, masonry, with sidebar layouts .
 
-# without Database or Server but Responsive Design
- 
-
+# without Database or Server 
