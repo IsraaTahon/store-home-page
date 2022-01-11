@@ -6,4 +6,4 @@
  
  Shop Layouts Grid, masonry, with sidebar layouts .
 
-# without Database or Server 
+ Without Database or Server 
